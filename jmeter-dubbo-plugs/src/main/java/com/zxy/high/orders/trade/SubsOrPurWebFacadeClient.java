@@ -1,4 +1,4 @@
-package com.zxy.highorders.trade;
+package com.zxy.high.orders.trade;
 
 
 import org.apache.jmeter.config.Arguments;

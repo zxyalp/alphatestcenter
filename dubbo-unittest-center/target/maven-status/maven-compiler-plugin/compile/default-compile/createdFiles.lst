@@ -1,1 +1,2 @@
-com\zxy\App.class
+com\zxy\utils\App.class
+com\zxy\utils\RandomExtUtils.class
