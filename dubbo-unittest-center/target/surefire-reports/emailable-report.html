@@ -9,11 +9,58 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">highOrders</th></tr>
-<tr><td><a href="#t0">trade</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">3,389</td><td></td><td></td></tr>
+<tr><td><a href="#t0">trade</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">62,585</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">highOrders</th></tr></tbody><tbody id="t0"><tr><th colspan="4">trade &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.zxy.high.orders.trade.SubsOrPurWebFacadeTest</td><td><a href="#m0">webFacadeTest</a></td><td rowspan="1">1534243085606</td><td rowspan="1">1089</td></tr><tr class="passedeven"><td><a href="#m1">webFacadeTest01</a></td><td rowspan="1">1534243086697</td><td rowspan="1">417</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">highOrders</th></tr></tbody><tbody id="t0"><tr><th colspan="4">trade &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">com.zxy.high.orders.trade.SubsOrPurWebFacadeTest</td><td><a href="#m0">webFacadeTest</a></td><td rowspan="1">1534318383638</td><td rowspan="1">30114</td></tr><tr class="failedeven"><td><a href="#m1">webFacadeTest01</a></td><td rowspan="1">1534318413759</td><td rowspan="1">30012</td></tr></tbody>
 </table>
-<h2>trade</h2><h3 id="m0">com.zxy.high.orders.trade.SubsOrPurWebFacadeTest#webFacadeTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.zxy.high.orders.trade.SubsOrPurWebFacadeTest#webFacadeTest01</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>trade</h2><h3 id="m0">com.zxy.high.orders.trade.SubsOrPurWebFacadeTest#webFacadeTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">com.alibaba.dubbo.rpc.RpcException: Failed to invoke the method execute in the service com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade. Tried 1 times of the providers [192.168.221.123:20891] (1/2) from the registry 192.168.221.122:2182 on the consumer 192.168.121.20 using the dubbo version 2.5.3. Last error is: Invoke remote method timeout. method: execute, provider: dubbo://192.168.221.123:20891/com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade2?anyhost=true&amp;application=dubbo-test-center&amp;check=false&amp;default.retries=0&amp;default.timeout=30000&amp;dispatcher=all&amp;dubbo=2.5.3&amp;execute.retries=0&amp;interface=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade&amp;methods=execute&amp;pid=13944&amp;revision=1.0.0-SNAPSHOT&amp;side=consumer&amp;timestamp=1534318382652, cause: Waiting server-side response timeout by scan timer. start time: 2018-08-15 15:33:03.747, end time: 2018-08-15 15:33:33.751, client elapsed: 84 ms, server elapsed: 29920 ms, timeout: 30000 ms, request: Request [id=0, version=2.0.0, twoway=true, event=false, broken=false, data=RpcInvocation [methodName=execute, parameterTypes=[class com.howbuy.tms.common.client.BaseRequest], arguments=[com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebRequest@20ed3303], attachments={path=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade2, interface=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade, version=0.0.0, timeout=30000}]], channel: /192.168.121.20:13487 -&gt; /192.168.221.123:20891
+	at com.alibaba.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:101)
+	at com.alibaba.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:227)
+	at com.alibaba.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:72)
+	at com.alibaba.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:52)
+	at com.alibaba.dubbo.common.bytecode.proxy0.execute(proxy0.java)
+	at com.zxy.high.orders.trade.SubsOrPurWebFacadeTest.webFacadeTest(SubsOrPurWebFacadeTest.java:66)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:175)
+Caused by: com.alibaba.dubbo.remoting.TimeoutException: Waiting server-side response timeout by scan timer. start time: 2018-08-15 15:33:03.747, end time: 2018-08-15 15:33:33.751, client elapsed: 84 ms, server elapsed: 29920 ms, timeout: 30000 ms, request: Request [id=0, version=2.0.0, twoway=true, event=false, broken=false, data=RpcInvocation [methodName=execute, parameterTypes=[class com.howbuy.tms.common.client.BaseRequest], arguments=[com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebRequest@20ed3303], attachments={path=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade2, interface=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade, version=0.0.0, timeout=30000}]], channel: /192.168.121.20:13487 -&gt; /192.168.221.123:20891
+	at com.alibaba.dubbo.remoting.exchange.support.DefaultFuture.returnFromResponse(DefaultFuture.java:188)
+	at com.alibaba.dubbo.remoting.exchange.support.DefaultFuture.get(DefaultFuture.java:110)
+	at com.alibaba.dubbo.remoting.exchange.support.DefaultFuture.get(DefaultFuture.java:84)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboInvoker.doInvoke(DubboInvoker.java:96)
+	at com.alibaba.dubbo.rpc.protocol.AbstractInvoker.invoke(AbstractInvoker.java:144)
+	at com.alibaba.dubbo.rpc.listener.ListenerInvokerWrapper.invoke(ListenerInvokerWrapper.java:74)
+	at com.alibaba.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:75)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.filter.FutureFilter.invoke(FutureFilter.java:53)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.ConsumerContextFilter.invoke(ConsumerContextFilter.java:48)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:53)
+	at com.alibaba.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:77)
+	... 37 more
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.zxy.high.orders.trade.SubsOrPurWebFacadeTest#webFacadeTest01</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">com.alibaba.dubbo.rpc.RpcException: Failed to invoke the method execute in the service com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade. Tried 1 times of the providers [192.168.221.123:20891] (1/2) from the registry 192.168.221.122:2182 on the consumer 192.168.121.20 using the dubbo version 2.5.3. Last error is: Invoke remote method timeout. method: execute, provider: dubbo://192.168.221.123:20891/com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade2?anyhost=true&amp;application=dubbo-test-center&amp;check=false&amp;default.retries=0&amp;default.timeout=30000&amp;dispatcher=all&amp;dubbo=2.5.3&amp;execute.retries=0&amp;interface=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade&amp;methods=execute&amp;pid=13944&amp;revision=1.0.0-SNAPSHOT&amp;side=consumer&amp;timestamp=1534318382652, cause: Waiting server-side response timeout. start time: 2018-08-15 15:33:33.760, end time: 2018-08-15 15:34:03.771, client elapsed: 0 ms, server elapsed: 30011 ms, timeout: 30000 ms, request: Request [id=1, version=2.0.0, twoway=true, event=false, broken=false, data=RpcInvocation [methodName=execute, parameterTypes=[class com.howbuy.tms.common.client.BaseRequest], arguments=[com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebRequest@63ec445c], attachments={path=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade2, interface=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade, version=0.0.0, timeout=30000}]], channel: /192.168.121.20:13487 -&gt; /192.168.221.123:20891
+	at com.alibaba.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:101)
+	at com.alibaba.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:227)
+	at com.alibaba.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:72)
+	at com.alibaba.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:52)
+	at com.alibaba.dubbo.common.bytecode.proxy0.execute(proxy0.java)
+	at com.zxy.high.orders.trade.SubsOrPurWebFacadeTest.webFacadeTest01(SubsOrPurWebFacadeTest.java:87)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:175)
+Caused by: com.alibaba.dubbo.remoting.TimeoutException: Waiting server-side response timeout. start time: 2018-08-15 15:33:33.760, end time: 2018-08-15 15:34:03.771, client elapsed: 0 ms, server elapsed: 30011 ms, timeout: 30000 ms, request: Request [id=1, version=2.0.0, twoway=true, event=false, broken=false, data=RpcInvocation [methodName=execute, parameterTypes=[class com.howbuy.tms.common.client.BaseRequest], arguments=[com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebRequest@63ec445c], attachments={path=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade2, interface=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade, version=0.0.0, timeout=30000}]], channel: /192.168.121.20:13487 -&gt; /192.168.221.123:20891
+	at com.alibaba.dubbo.remoting.exchange.support.DefaultFuture.get(DefaultFuture.java:107)
+	at com.alibaba.dubbo.remoting.exchange.support.DefaultFuture.get(DefaultFuture.java:84)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboInvoker.doInvoke(DubboInvoker.java:96)
+	at com.alibaba.dubbo.rpc.protocol.AbstractInvoker.invoke(AbstractInvoker.java:144)
+	at com.alibaba.dubbo.rpc.listener.ListenerInvokerWrapper.invoke(ListenerInvokerWrapper.java:74)
+	at com.alibaba.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:75)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.filter.FutureFilter.invoke(FutureFilter.java:53)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.ConsumerContextFilter.invoke(ConsumerContextFilter.java:48)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:53)
+	at com.alibaba.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:77)
+	... 37 more
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

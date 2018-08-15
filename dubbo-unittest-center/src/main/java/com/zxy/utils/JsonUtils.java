@@ -1,11 +1,11 @@
 package com.zxy.utils;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonSyntaxException;
+import com.google.gson.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.lang.reflect.Type;
 
 
 /**
@@ -14,7 +14,25 @@ import org.slf4j.LoggerFactory;
  */
 public class JsonUtils {
 
-    private final Logger logger = LoggerFactory.getLogger(JsonUtils.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(JsonUtils.class.getName());
+
+    private static final Gson gson = new GsonBuilder().serializeNulls().create();
+
+
+    public static String toJson(Object src){
+          return  gson.toJson(src);
+    }
+
+    public static String toJson(Object src, Type typeOfSrc){
+        return  gson.toJson(src, typeOfSrc);
+    }
+
+    public static String tpFormatJson(String src){
+        Gson gson1 = new GsonBuilder().setPrettyPrinting().create();
+        JsonParser parser = new JsonParser();
+        JsonElement element = parser.parse(src);
+        return gson1.toJson(element);
+    }
 
     public static void main(String[] args) {
         Gson gson = new Gson();

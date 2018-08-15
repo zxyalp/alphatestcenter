@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-highOrders">
-              <span class="suite-name border-passed">highOrders</span>
+              <span class="suite-name border-failed">highOrders</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,26 +91,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">2 methods, 2 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-highOrders" class="hide-methods passed suite-highOrders"> (hide)</a> <!-- hide-methods passed suite-highOrders -->
-                      <a href="#" panel-name="suite-highOrders" class="show-methods passed suite-highOrders"> (show)</a> <!-- show-methods passed suite-highOrders -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-highOrders" class="hide-methods failed suite-highOrders"> (hide)</a> <!-- hide-methods failed suite-highOrders -->
+                      <a href="#" panel-name="suite-highOrders" class="show-methods failed suite-highOrders"> (show)</a> <!-- show-methods failed suite-highOrders -->
                     </span>
-                    <div class="method-list-content passed suite-highOrders">
+                    <div class="method-list-content failed suite-highOrders">
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-highOrders" title="com.zxy.high.orders.trade.SubsOrPurWebFacadeTest" hash-for-method="webFacadeTest">webFacadeTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-highOrders" title="com.zxy.high.orders.trade.SubsOrPurWebFacadeTest" hash-for-method="webFacadeTest01">webFacadeTest01</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-highOrders -->
+                    </div> <!-- method-list-content failed suite-highOrders -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -122,9 +122,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-highOrders" class="panel highOrders">
-          <div class="suite-highOrders-class-passed">
+          <div class="suite-highOrders-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">com.zxy.high.orders.trade.SubsOrPurWebFacadeTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -133,6 +133,32 @@
                   <a name="webFacadeTest">
                   </a> <!-- webFacadeTest -->
                   <span class="method-name">webFacadeTest</span>
+                  <div class="stack-trace">com.alibaba.dubbo.rpc.RpcException: Failed to invoke the method execute in the service com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade. Tried 1 times of the providers [192.168.221.123:20891] (1/2) from the registry 192.168.221.122:2182 on the consumer 192.168.121.20 using the dubbo version 2.5.3. Last error is: Invoke remote method timeout. method: execute, provider: dubbo://192.168.221.123:20891/com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade2?anyhost=true&amp;application=dubbo-test-center&amp;check=false&amp;default.retries=0&amp;default.timeout=30000&amp;dispatcher=all&amp;dubbo=2.5.3&amp;execute.retries=0&amp;interface=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade&amp;methods=execute&amp;pid=13944&amp;revision=1.0.0-SNAPSHOT&amp;side=consumer&amp;timestamp=1534318382652, cause: Waiting server-side response timeout by scan timer. start time: 2018-08-15 15:33:03.747, end time: 2018-08-15 15:33:33.751, client elapsed: 84 ms, server elapsed: 29920 ms, timeout: 30000 ms, request: Request [id=0, version=2.0.0, twoway=true, event=false, broken=false, data=RpcInvocation [methodName=execute, parameterTypes=[class com.howbuy.tms.common.client.BaseRequest], arguments=[com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebRequest@20ed3303], attachments={path=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade2, interface=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade, version=0.0.0, timeout=30000}]], channel: /192.168.121.20:13487 -&gt; /192.168.221.123:20891
+	at com.alibaba.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:101)
+	at com.alibaba.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:227)
+	at com.alibaba.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:72)
+	at com.alibaba.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:52)
+	at com.alibaba.dubbo.common.bytecode.proxy0.execute(proxy0.java)
+	at com.zxy.high.orders.trade.SubsOrPurWebFacadeTest.webFacadeTest(SubsOrPurWebFacadeTest.java:66)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:175)
+Caused by: com.alibaba.dubbo.remoting.TimeoutException: Waiting server-side response timeout by scan timer. start time: 2018-08-15 15:33:03.747, end time: 2018-08-15 15:33:33.751, client elapsed: 84 ms, server elapsed: 29920 ms, timeout: 30000 ms, request: Request [id=0, version=2.0.0, twoway=true, event=false, broken=false, data=RpcInvocation [methodName=execute, parameterTypes=[class com.howbuy.tms.common.client.BaseRequest], arguments=[com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebRequest@20ed3303], attachments={path=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade2, interface=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade, version=0.0.0, timeout=30000}]], channel: /192.168.121.20:13487 -&gt; /192.168.221.123:20891
+	at com.alibaba.dubbo.remoting.exchange.support.DefaultFuture.returnFromResponse(DefaultFuture.java:188)
+	at com.alibaba.dubbo.remoting.exchange.support.DefaultFuture.get(DefaultFuture.java:110)
+	at com.alibaba.dubbo.remoting.exchange.support.DefaultFuture.get(DefaultFuture.java:84)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboInvoker.doInvoke(DubboInvoker.java:96)
+	at com.alibaba.dubbo.rpc.protocol.AbstractInvoker.invoke(AbstractInvoker.java:144)
+	at com.alibaba.dubbo.rpc.listener.ListenerInvokerWrapper.invoke(ListenerInvokerWrapper.java:74)
+	at com.alibaba.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:75)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.filter.FutureFilter.invoke(FutureFilter.java:53)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.ConsumerContextFilter.invoke(ConsumerContextFilter.java:48)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:53)
+	at com.alibaba.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:77)
+	... 37 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
                   <em>
 (高端网站下单场景)                  </em>
                 </div> <!-- method-content -->
@@ -142,12 +168,37 @@
                   <a name="webFacadeTest01">
                   </a> <!-- webFacadeTest01 -->
                   <span class="method-name">webFacadeTest01</span>
+                  <div class="stack-trace">com.alibaba.dubbo.rpc.RpcException: Failed to invoke the method execute in the service com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade. Tried 1 times of the providers [192.168.221.123:20891] (1/2) from the registry 192.168.221.122:2182 on the consumer 192.168.121.20 using the dubbo version 2.5.3. Last error is: Invoke remote method timeout. method: execute, provider: dubbo://192.168.221.123:20891/com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade2?anyhost=true&amp;application=dubbo-test-center&amp;check=false&amp;default.retries=0&amp;default.timeout=30000&amp;dispatcher=all&amp;dubbo=2.5.3&amp;execute.retries=0&amp;interface=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade&amp;methods=execute&amp;pid=13944&amp;revision=1.0.0-SNAPSHOT&amp;side=consumer&amp;timestamp=1534318382652, cause: Waiting server-side response timeout. start time: 2018-08-15 15:33:33.760, end time: 2018-08-15 15:34:03.771, client elapsed: 0 ms, server elapsed: 30011 ms, timeout: 30000 ms, request: Request [id=1, version=2.0.0, twoway=true, event=false, broken=false, data=RpcInvocation [methodName=execute, parameterTypes=[class com.howbuy.tms.common.client.BaseRequest], arguments=[com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebRequest@63ec445c], attachments={path=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade2, interface=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade, version=0.0.0, timeout=30000}]], channel: /192.168.121.20:13487 -&gt; /192.168.221.123:20891
+	at com.alibaba.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:101)
+	at com.alibaba.dubbo.rpc.cluster.support.AbstractClusterInvoker.invoke(AbstractClusterInvoker.java:227)
+	at com.alibaba.dubbo.rpc.cluster.support.wrapper.MockClusterInvoker.invoke(MockClusterInvoker.java:72)
+	at com.alibaba.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:52)
+	at com.alibaba.dubbo.common.bytecode.proxy0.execute(proxy0.java)
+	at com.zxy.high.orders.trade.SubsOrPurWebFacadeTest.webFacadeTest01(SubsOrPurWebFacadeTest.java:87)
+	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:175)
+Caused by: com.alibaba.dubbo.remoting.TimeoutException: Waiting server-side response timeout. start time: 2018-08-15 15:33:33.760, end time: 2018-08-15 15:34:03.771, client elapsed: 0 ms, server elapsed: 30011 ms, timeout: 30000 ms, request: Request [id=1, version=2.0.0, twoway=true, event=false, broken=false, data=RpcInvocation [methodName=execute, parameterTypes=[class com.howbuy.tms.common.client.BaseRequest], arguments=[com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebRequest@63ec445c], attachments={path=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade2, interface=com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade, version=0.0.0, timeout=30000}]], channel: /192.168.121.20:13487 -&gt; /192.168.221.123:20891
+	at com.alibaba.dubbo.remoting.exchange.support.DefaultFuture.get(DefaultFuture.java:107)
+	at com.alibaba.dubbo.remoting.exchange.support.DefaultFuture.get(DefaultFuture.java:84)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.DubboInvoker.doInvoke(DubboInvoker.java:96)
+	at com.alibaba.dubbo.rpc.protocol.AbstractInvoker.invoke(AbstractInvoker.java:144)
+	at com.alibaba.dubbo.rpc.listener.ListenerInvokerWrapper.invoke(ListenerInvokerWrapper.java:74)
+	at com.alibaba.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:75)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.filter.FutureFilter.invoke(FutureFilter.java:53)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.ConsumerContextFilter.invoke(ConsumerContextFilter.java:48)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:53)
+	at com.alibaba.dubbo.rpc.cluster.support.FailoverClusterInvoker.doInvoke(FailoverClusterInvoker.java:77)
+	... 37 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
                   <em>
 (高端产品极差校验失败)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-highOrders-class-passed -->
+          </div> <!-- suite-highOrders-class-failed -->
         </div> <!-- panel highOrders -->
         <div panel-name="test-xml-highOrders" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -208,16 +259,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'webFacadeTest')
 data.setCell(0, 2, 'com.zxy.high.orders.trade.SubsOrPurWebFacadeTest')
-data.setCell(0, 3, 1089);
+data.setCell(0, 3, 30114);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'webFacadeTest01')
 data.setCell(1, 2, 'com.zxy.high.orders.trade.SubsOrPurWebFacadeTest')
-data.setCell(1, 3, 417);
+data.setCell(1, 3, 30012);
 window.suiteTableData['highOrders']= { tableData: data, tableDiv: 'times-div-highOrders'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-highOrders">
               </div> <!-- times-div-highOrders -->
             </div> <!-- times-div -->
@@ -244,41 +295,49 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">com.zxy.high.orders.trade.SubsOrPurWebFacadeTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">springTestContextBeforeTestClass</span>
-                <span class="method-start">0 ms</span>
+                <span class="method-start">113 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">springTestContextPrepareTestInstance</span>
-                <span class="method-start">8 ms</span>
+                <span class="method-start">115 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">springTestContextBeforeTestMethod(public void com.zxy.high.orders.trade.SubsOrPurWebFacadeTest.webFacadeTest() throws java.lang.Except...)</span>
-                <span class="method-start">1870 ms</span>
+                <span class="method-start">2445 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">webFacadeTest</span>
-                <span class="method-start">1873 ms</span>
+                <span class="method-start">2448 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">springTestContextAfterTestMethod(public void com.zxy.high.orders.trade.SubsOrPurWebFacadeTest.webFacadeTest() throws java.lang.Except...)</span>
-                <span class="method-start">2962 ms</span>
+                <span class="method-start">32568 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">springTestContextBeforeTestMethod(public void com.zxy.high.orders.trade.SubsOrPurWebFacadeTest.webFacadeTest01() throws java.lang.Exce...)</span>
-                <span class="method-start">2963 ms</span>
+                <span class="method-start">32569 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">webFacadeTest01</span>
-                <span class="method-start">2964 ms</span>
+                <span class="method-start">32569 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">springTestContextAfterTestMethod(public void com.zxy.high.orders.trade.SubsOrPurWebFacadeTest.webFacadeTest01() throws java.lang.Exce...)</span>
-                <span class="method-start">3382 ms</span>
+                <span class="method-start">62582 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">springTestContextAfterTestClass</span>
-                <span class="method-start">3382 ms</span>
+                <span class="method-start">62583 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
