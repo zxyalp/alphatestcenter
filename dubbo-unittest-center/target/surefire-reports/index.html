@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-highOrders">
-              <span class="suite-name border-failed">highOrders</span>
+              <span class="suite-name border-passed">highOrders</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods, 1 failed,   4 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-highOrders" class="hide-methods failed suite-highOrders"> (hide)</a> <!-- hide-methods failed suite-highOrders -->
-                      <a href="#" panel-name="suite-highOrders" class="show-methods failed suite-highOrders"> (show)</a> <!-- show-methods failed suite-highOrders -->
-                    </span>
-                    <div class="method-list-content failed suite-highOrders">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-highOrders" title="com.zxy.high.orders.trade.subsorpur.subsorpurweb.SubsOrPurWebFacadeTest" hash-for-method="add_appAmt_less_product_limit_test">add_appAmt_less_product_limit_test</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-highOrders -->
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -117,6 +103,11 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-highOrders" title="com.zxy.high.orders.trade.subsorpur.subsorpurweb.ProductLimitTest" hash-for-method="add_appAmt_less_product_limit_test">add_appAmt_less_product_limit_test</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-highOrders" title="com.zxy.high.orders.trade.subsorpur.subsorpurweb.SubsOrPurWebFacadeTest" hash-for-method="add_appAmt_less_product_limit_test">add_appAmt_less_product_limit_test</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -146,9 +137,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-highOrders" class="panel highOrders">
-          <div class="suite-highOrders-class-failed">
+          <div class="suite-highOrders-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">com.zxy.high.orders.trade.subsorpur.subsorpurweb.SubsOrPurWebFacadeTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -157,23 +148,10 @@
                   <a name="add_appAmt_less_product_limit_test">
                   </a> <!-- add_appAmt_less_product_limit_test -->
                   <span class="method-name">add_appAmt_less_product_limit_test</span>
-                  <div class="stack-trace">java.lang.AssertionError: 交易金额小于追加认申购下限验证失败. expected [Z3000000] but found [Z3000027]
-	at com.zxy.high.orders.trade.subsorpur.subsorpurweb.SubsOrPurWebFacadeTest.add_appAmt_less_product_limit_test(SubsOrPurWebFacadeTest.java:134)
-	at org.springframework.test.context.testng.AbstractTestNGSpringContextTests.run(AbstractTestNGSpringContextTests.java:175)
-... Removed 36 stack frames
-</div> <!-- stack-trace -->
                   <em>
 (下单追加购买金额小于产品最低追加申请金额)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-highOrders-class-failed -->
-          <div class="suite-highOrders-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.zxy.high.orders.trade.subsorpur.subsorpurweb.SubsOrPurWebFacadeTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
                   <a name="fund_range_test">
@@ -323,23 +301,23 @@ data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'web_facade_test')
 data.setCell(0, 2, 'com.zxy.high.orders.trade.subsorpur.subsorpurweb.SubsOrPurWebFacadeTest')
-data.setCell(0, 3, 11057);
+data.setCell(0, 3, 11175);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'add_appAmt_less_product_limit_test')
 data.setCell(1, 2, 'com.zxy.high.orders.trade.subsorpur.subsorpurweb.SubsOrPurWebFacadeTest')
-data.setCell(1, 3, 8404);
+data.setCell(1, 3, 8359);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'add_appAmt_less_product_limit_test')
-data.setCell(2, 2, 'com.zxy.high.orders.trade.subsorpur.subsorpurweb.ProductLimitTest')
-data.setCell(2, 3, 8301);
+data.setCell(2, 1, 'fund_range_test')
+data.setCell(2, 2, 'com.zxy.high.orders.trade.subsorpur.subsorpurweb.SubsOrPurWebFacadeTest')
+data.setCell(2, 3, 8208);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'add_purAmt_less_product_limit_test')
 data.setCell(3, 2, 'com.zxy.high.orders.trade.subsorpur.subsorpurweb.ProductLimitTest')
-data.setCell(3, 3, 8241);
+data.setCell(3, 3, 8165);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'fund_range_test')
-data.setCell(4, 2, 'com.zxy.high.orders.trade.subsorpur.subsorpurweb.SubsOrPurWebFacadeTest')
-data.setCell(4, 3, 8200);
+data.setCell(4, 1, 'add_appAmt_less_product_limit_test')
+data.setCell(4, 2, 'com.zxy.high.orders.trade.subsorpur.subsorpurweb.ProductLimitTest')
+data.setCell(4, 3, 8139);
 window.suiteTableData['highOrders']= { tableData: data, tableDiv: 'times-div-highOrders'}
 return data;
 }
@@ -377,128 +355,126 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">springTestContextPrepareTestInstance</span>
-                <span class="method-start">9 ms</span>
+                <span class="method-start">8 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">springTestContextBeforeTestMethod(public void com.zxy.high.orders.trade.subsorpur.subsorpurweb.SubsOrPurWebFacadeTest.add_appAmt_less_...)</span>
-                <span class="method-start">2166 ms</span>
+                <span class="method-start">1907 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">2168 ms</span>
+                <span class="method-start">1909 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">add_appAmt_less_product_limit_test</span>
-                <span class="method-start">2307 ms</span>
+                <span class="method-start">2003 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">10718 ms</span>
+                <span class="method-start">10362 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">springTestContextAfterTestMethod(public void com.zxy.high.orders.trade.subsorpur.subsorpurweb.SubsOrPurWebFacadeTest.add_appAmt_less_...)</span>
-                <span class="method-start">10718 ms</span>
+                <span class="method-start">10363 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">springTestContextBeforeTestMethod(public void com.zxy.high.orders.trade.subsorpur.subsorpurweb.SubsOrPurWebFacadeTest.fund_range_test(...)</span>
-                <span class="method-start">10719 ms</span>
+                <span class="method-start">10364 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">10719 ms</span>
+                <span class="method-start">10365 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">fund_range_test</span>
-                <span class="method-start">10721 ms</span>
+                <span class="method-start">10366 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">18921 ms</span>
+                <span class="method-start">18574 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">springTestContextAfterTestMethod(public void com.zxy.high.orders.trade.subsorpur.subsorpurweb.SubsOrPurWebFacadeTest.fund_range_test(...)</span>
-                <span class="method-start">18921 ms</span>
+                <span class="method-start">18575 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">springTestContextBeforeTestMethod(public void com.zxy.high.orders.trade.subsorpur.subsorpurweb.SubsOrPurWebFacadeTest.web_facade_test(...)</span>
-                <span class="method-start">18922 ms</span>
+                <span class="method-start">18578 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">18922 ms</span>
+                <span class="method-start">18578 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">web_facade_test</span>
-                <span class="method-start">18923 ms</span>
+                <span class="method-start">18580 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">29980 ms</span>
+                <span class="method-start">29755 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">springTestContextAfterTestMethod(public void com.zxy.high.orders.trade.subsorpur.subsorpurweb.SubsOrPurWebFacadeTest.web_facade_test(...)</span>
-                <span class="method-start">29980 ms</span>
+                <span class="method-start">29755 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">springTestContextAfterTestClass</span>
-                <span class="method-start">29980 ms</span>
+                <span class="method-start">29756 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.zxy.high.orders.trade.subsorpur.subsorpurweb.ProductLimitTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">springTestContextBeforeTestClass</span>
-                <span class="method-start">29984 ms</span>
+                <span class="method-start">29757 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">springTestContextPrepareTestInstance</span>
-                <span class="method-start">29984 ms</span>
+                <span class="method-start">29758 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">springTestContextBeforeTestMethod(public void com.zxy.high.orders.trade.subsorpur.subsorpurweb.ProductLimitTest.add_appAmt_less_produc...)</span>
-                <span class="method-start">29988 ms</span>
+                <span class="method-start">29761 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">29989 ms</span>
+                <span class="method-start">29761 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">add_appAmt_less_product_limit_test</span>
-                <span class="method-start">29990 ms</span>
+                <span class="method-start">29762 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">38291 ms</span>
+                <span class="method-start">37901 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">springTestContextAfterTestMethod(public void com.zxy.high.orders.trade.subsorpur.subsorpurweb.ProductLimitTest.add_appAmt_less_produc...)</span>
-                <span class="method-start">38292 ms</span>
+                <span class="method-start">37902 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">springTestContextBeforeTestMethod(public void com.zxy.high.orders.trade.subsorpur.subsorpurweb.ProductLimitTest.add_purAmt_less_produc...)</span>
-                <span class="method-start">38292 ms</span>
+                <span class="method-start">37902 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">38293 ms</span>
+                <span class="method-start">37903 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">add_purAmt_less_product_limit_test</span>
-                <span class="method-start">38294 ms</span>
+                <span class="method-start">37904 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">46535 ms</span>
+                <span class="method-start">46069 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">springTestContextAfterTestMethod(public void com.zxy.high.orders.trade.subsorpur.subsorpurweb.ProductLimitTest.add_purAmt_less_produc...)</span>
-                <span class="method-start">46535 ms</span>
+                <span class="method-start">46070 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">springTestContextAfterTestClass</span>
-                <span class="method-start">46536 ms</span>
+                <span class="method-start">46070 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

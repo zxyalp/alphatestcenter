@@ -81,12 +81,6 @@ public class SubsOrPurWebFacadeTest extends BaseTestCase {
 
         logger.info("返回结果：{}", JSON.toJSONString(response));
 
-        if ("Z0000000".equals(response.getReturnCode())) {
-            logger.info("测试通过,{}:{}", response.getReturnCode(), response.getDescription());
-        } else {
-            logger.error("测试失败,{}:{}", response.getReturnCode(), response.getDescription());
-        }
-
         Assert.assertEquals(response.getReturnCode(), "Z0000000");
 
     }
@@ -109,8 +103,6 @@ public class SubsOrPurWebFacadeTest extends BaseTestCase {
 
         BigDecimal appAmt = MathCalcUtils.add(purchaseAmt, esitmateFee);
 
-        logger.info("申请金额{},手续费{}", appAmt, esitmateFee);
-
         jsonObject.put("appAmt", appAmt);
 
         jsonObject.put("esitmateFee", esitmateFee);
@@ -124,12 +116,6 @@ public class SubsOrPurWebFacadeTest extends BaseTestCase {
         SubsOrPurWebResponse response = subsOrPurWebFacade.execute(request);
 
         logger.info("返回结果：{}", JSON.toJSONString(response));
-
-        if ("Z3000027".equals(response.getReturnCode())) {
-            logger.info("测试通过,{}:{}", response.getReturnCode(), response.getDescription());
-        } else {
-            logger.error("测试失败,{}:{}", response.getReturnCode(), response.getDescription());
-        }
 
         Assert.assertEquals(response.getReturnCode(), "Z3000027", "交易金额小于追加认申购下限验证失败.");
 
@@ -169,12 +155,6 @@ public class SubsOrPurWebFacadeTest extends BaseTestCase {
         SubsOrPurWebResponse response = subsOrPurWebFacade.execute(request);
 
         logger.info("返回结果：{}", JSON.toJSONString(response));
-
-        if ("Z3000063".equals(response.getReturnCode())) {
-            logger.info("测试通过,{}:{}", response.getReturnCode(), response.getDescription());
-        } else {
-            logger.error("测试失败,{}:{}", response.getReturnCode(), response.getDescription());
-        }
 
         Assert.assertEquals(response.getReturnCode(), "Z3000063", "高端产品极差校验通过.");
 
