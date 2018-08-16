@@ -27,5 +27,4 @@ public class BaseTestCase extends AbstractTestNGSpringContextTests{
     public void tearDownClass(){
         logger.info("===========End of unit test============");
     }
-
 }

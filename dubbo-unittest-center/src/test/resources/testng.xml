@@ -2,9 +2,36 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="highOrders" verbose="1" >
     <test name="trade">
+        <groups>
+            <define name="all">
+                <include name="functest"/>
+                <include name="checkintest"/>
+                <include name="broken"/>
+            </define>
+
+            <run>
+                <include name="functest"/>
+            </run>
+        </groups>
+
         <classes>
-            <class name="com.zxy.high.orders.trade.SubsOrPurWebFacadeTest"/>
+            <class name="com.zxy.high.orders.trade.subsorpur.subsorpurweb.SubsOrPurWebFacadeTest"/>
+            <class name="com.zxy.high.orders.trade.subsorpur.subsorpurweb.ProductLimitTest"/>
+
         </classes>
+
+        <!--<classes>-->
+            <!--<class name="com.zxy.high.orders.trade.subsorpur.subsorpurweb.SubsOrPurWebFacadeTest">-->
+                <!--<methods>-->
+                    <!--<include name="web_facade_test"/>-->
+                    <!--<include name="add_appAmt_less_product_limit_test"/>-->
+                <!--</methods>-->
+            <!--</class>-->
+        <!--</classes>-->
+
+        <!--<packages>-->
+            <!--<package name="com.zxy.high.orders.trade.subsorpur.subsorpurweb"/>-->
+        <!--</packages>-->
     </test>
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter" />

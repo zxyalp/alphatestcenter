@@ -1,4 +1,10 @@
-com\zxy\high\orders\trade\SubsOrPurWebFacadeTest.class
 com\zxy\high\orders\trade\AppTest$1.class
+com\zxy\high\orders\trade\subsorpur\subsorpurweb\ProductAgeTest.class
+com\zxy\high\orders\trade\subsorpur\subsorpurweb\ProductQuotaTest.class
 com\zxy\high\orders\BaseTestCase.class
+com\zxy\high\orders\trade\subsorpur\subsorpurweb\ProductRangeTest.class
+com\zxy\high\orders\trade\subsorpur\subsorpurcounter\SubsOrPurCounterFacadeTest.class
+com\zxy\high\orders\trade\subsorpur\subsorpurweb\ProductFeeDiscountTest.class
+com\zxy\high\orders\trade\subsorpur\subsorpurweb\SubsOrPurWebFacadeTest.class
 com\zxy\high\orders\trade\AppTest.class
+com\zxy\high\orders\trade\subsorpur\subsorpurweb\ProductLimitTest.class

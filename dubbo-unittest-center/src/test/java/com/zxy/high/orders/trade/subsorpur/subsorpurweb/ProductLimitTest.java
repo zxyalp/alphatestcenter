@@ -1,35 +1,31 @@
-package com.zxy.high.orders.trade;
+package com.zxy.high.orders.trade.subsorpur.subsorpurweb;
 
-
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade;
+import com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebRequest;
+import com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebResponse;
 import com.zxy.high.orders.BaseTestCase;
 import com.zxy.utils.FileExtUtils;
 import com.zxy.utils.MathCalcUtils;
 import com.zxy.utils.RandomExtUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade;
-import com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebRequest;
-import com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebResponse;
-import org.testng.annotations.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 
-import com.alibaba.fastjson.JSON;
-
-
 /**
- * 高端网站下单接口
- * 接口路径：com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade;
- *
  * @author yang.zhou
- * @date 2018/8/14
+ * @date 2018/8/16
  */
-public class SubsOrPurWebFacadeTest extends BaseTestCase {
+@Test(groups = {"functest"})
+public class ProductLimitTest extends BaseTestCase {
 
     private static final Logger logger = LoggerFactory.getLogger(SubsOrPurWebFacadeTest.class.getName());
 
@@ -58,8 +54,6 @@ public class SubsOrPurWebFacadeTest extends BaseTestCase {
         jsonObject.put("dataTrack", RandomExtUtils.randomAlphabetic(32));
         jsonObject.put("externalDealNo", RandomExtUtils.randomAlphabetic(36));
 
-        logger.info("预约订单号：{}", jsonObject.getString("appointmentDealNo"));
-
     }
 
 
@@ -68,42 +62,16 @@ public class SubsOrPurWebFacadeTest extends BaseTestCase {
         logger.info(">>>>>>单元测试结束");
     }
 
-    @Test(enabled = true, description = "高端网站下单场景")
-    public void web_facade_test() throws Exception {
-
-        logger.info("json：{}", JSON.toJSON(jsonObject.toJSONString()).toString());
-
-        SubsOrPurWebRequest request = JSON.parseObject(jsonObject.toJSONString(), SubsOrPurWebRequest.class);
-
-        logger.info("请求内容：{}", JSON.toJSON(request).toString());
-
-        SubsOrPurWebResponse response = subsOrPurWebFacade.execute(request);
-
-        logger.info("返回结果：{}", JSON.toJSONString(response));
-
-        if ("Z0000000".equals(response.getReturnCode())) {
-            logger.info("测试通过,{}:{}", response.getReturnCode(), response.getDescription());
-        } else {
-            logger.error("测试失败,{}:{}", response.getReturnCode(), response.getDescription());
-        }
-
-        Assert.assertEquals(response.getReturnCode(), "Z0000000");
-
-    }
-
 
     /**
+     *
      * 产品购买金额低于产品最低追加申请金额
-     * <p>
-     * 产品CS0501 产品极差：100,追加净购买金额：1000，最低追加购买金额：10000
-     *
-     * @throws Exception
+     * <p>产品CS0501 产品极差：100,追加净购买金额：1000，最低追加购买金额：10000</p>
      */
-    @Test(enabled = true, description = "下单追加购买金额小于产品最低追加申请金额")
-    public void appAmt_less_fund_limit_test() throws Exception {
+    @Test(enabled = true, description = "追加净购买金额小于产品最低追加申请净金额")
+    public void add_purAmt_less_product_limit_test() throws Exception {
 
-
-        String purchaseAmt = "9000";
+        String purchaseAmt = "900";
 
         BigDecimal esitmateFee = MathCalcUtils.multiply(purchaseAmt, FEE_RATE, DISCOUNT);
 
@@ -129,30 +97,23 @@ public class SubsOrPurWebFacadeTest extends BaseTestCase {
         } else {
             logger.error("测试失败,{}:{}", response.getReturnCode(), response.getDescription());
         }
-
         Assert.assertEquals(response.getReturnCode(), "Z3000027", "交易金额小于追加认申购下限验证失败.");
-
     }
 
 
     /**
-     * 产品购买极差校验
-     * <p>
-     * 产品极差计算公式：
-     * （追加净购买金额 - 追加购买金额下限）% 产品极差（prod_differ）求模， 能整除，满足极差，否则极差校验失败。
-     * <p>
-     * 产品CS0501 产品极差：100,追加净购买金额：1000，最低追加购买金额：10000
      *
-     * @throws Exception
+     * 产品购买金额低于产品最低追加申请金额
+     * <p>产品CS0501 产品极差：100,追加净购买金额：1000，最低追加购买金额：10000</p>
      */
-    @Test(enabled = true, description = "高端产品极差校验失败")
-    public void fund_range_test() throws Exception {
+    @Test(enabled = true, description = "追加净购买金额小于产品最低追加净申请金额")
+    public void add_appAmt_less_product_limit_test() throws Exception {
 
-        String purchaseAmt = "10090";
+        String fistPurchaseAmt = "8000";
 
-        BigDecimal esitmateFee = MathCalcUtils.multiply(purchaseAmt, FEE_RATE, DISCOUNT);
+        BigDecimal esitmateFee = MathCalcUtils.multiply(fistPurchaseAmt, FEE_RATE, DISCOUNT);
 
-        BigDecimal appAmt = MathCalcUtils.add(purchaseAmt, esitmateFee);
+        BigDecimal appAmt = MathCalcUtils.add(fistPurchaseAmt, esitmateFee);
 
         logger.info("申请金额{},手续费{}", appAmt, esitmateFee);
 
@@ -174,8 +135,8 @@ public class SubsOrPurWebFacadeTest extends BaseTestCase {
         } else {
             logger.error("测试失败,{}:{}", response.getReturnCode(), response.getDescription());
         }
-
-        Assert.assertEquals(response.getReturnCode(), "Z3000063", "高端产品极差校验通过.");
-
+        Assert.assertEquals(response.getReturnCode(), "Z3000027", "交易金额小于追加认申购下限验证失败.");
     }
+
+
 }

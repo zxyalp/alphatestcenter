@@ -1,4 +1,5 @@
 com\zxy\utils\App.class
 com\zxy\utils\RandomExtUtils.class
+com\zxy\utils\MathCalcUtils.class
 com\zxy\utils\FileExtUtils.class
 com\zxy\utils\JsonUtils.class

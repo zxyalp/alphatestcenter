@@ -30,6 +30,8 @@
 
     <!-- generate proxy for the remote service, then demoService can be used in the same way as the
     local regular interface -->
-    <dubbo:reference id="subsOrPurWebFacade" interface="com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade"/>
+    <dubbo:reference id="subsOrPurWebFacade" interface="com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade" check="false"/>
+
+    <dubbo:reference id="subsOrPurCounterFacade" interface="com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurcounter.SubsOrPurCounterFacade" check="false"/>
 
 </beans>

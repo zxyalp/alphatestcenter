@@ -32,4 +32,6 @@
     local regular interface -->
     <dubbo:reference id="subsOrPurWebFacade" interface="com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurweb.SubsOrPurWebFacade" check="false"/>
 
+    <dubbo:reference id="subsOrPurCounterFacade" interface="com.howbuy.tms.high.orders.facade.trade.subsorpur.subsorpurcounter.SubsOrPurCounterFacade" check="false"/>
+
 </beans>
